@@ -1,26 +1,101 @@
-\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
-\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
-%\geometry{landscape}                		% Activate for for rotated page geometry
-\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{graphicx}				% Use pdf, png, jpg, or eps� with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
-\usepackage{amssymb}
+% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
 
-\title{Brief Article}
-\author{The Author}
-%\date{}							% Activate to display a given date or no date
+% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{hanging}
+
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{Times}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+\title{Criptografia y Seguridad, Tarea 1}
+\author{Fecha de Entrega: Lunes 18 de febrero de 2013}
+\date{}                                           % Activate to display a given date or no date
 
 \begin{document}
 \maketitle
-%\section{}
-%\subsection{}
 
-When you have some material, hit the �Typeset� button at the top left of the window. A dialog will appear asking you to save the document. When TEX typesets, it creates three or four additional files, so it is not a good idea to save directly to a location with many other files. Instead, put your source in a folder within such a location. To do that, navigate to a reasonable location, say ~/Documents, and then hit the �New Folder� button at the bottom of the dialog. Accept the default name or choose another and create the folder. Then name the document and save it. The default �Untitled� name will do
-As soon as you save, TEX will typeset the document and open a second window showing the result.
+% For many users, the previous commands will be enough.
+% If you want to directly input Unicode, add an Input Menu or Keyboard to the menu bar 
+% using the International Panel in System Preferences.
+% Unicode must be typeset using a font containing the appropriate characters.
+% Remove the comment signs below for examples.
 
-Go back to the original window and add some additional text. Hit �Typeset� again. This time TEX immediately typesets the new material and updates the output window.
+% \newfontfamily{\A}{Geeza Pro}
+% \newfontfamily{\H}[Scale=0.9]{Lucida Grande}
+% \newfontfamily{\J}[Scale=0.85]{Osaka}
 
-Now quit the program.
+% Here are some multilingual Unicode fonts: this is Arabic text: {\A السلام عليكم}, this is Hebrew: {\H שלום}, 
+% and here's some Japanese: {\J 今日は}.
+
+\begin{enumerate}
+\item ¿Cuántas transformaciones afines distintas hay para el alfabeto español de 27 letras? Justifique su respuesta.
+
+\item ¿Cuántas transformaciones afines distintas hay para el alfabeto griego de 24 letras? Justifique su respuesta.
+
+\item Utilice la transformación afin $3x + 5\ (mod\ 26)$ para cifrar el siguiente texto. Ignore los acentos y signos de puntuación:
+
+Siempre tengo un plan de emergencia cuando  tomo algún riesgo: si todo lo demás falla, voy a morir una muerte horrible
+y dolorosa. En efecto, no es un buen plan de emergencia, pero
+es un plan.
+
+(Walter Slovotsky, en {\it El camino a casa} de Joel Rosenberg)
+
+\item El siguiente texto fue cifrado con una transformación afín sobre el alfabeto español de 27 letras.
+La primer palabra es "nunca". Diga cuál fue la transformación de cifrado, y decifre el mensaje. (Sugerencia: encuentre la función inversa, que también es una transformación afín.)
+
+\setromanfont[Mapping=tex-text]{Courier}
+JEBZN HAQZY BCGKH WIHTB CBJQS AHNHR HLHWG FRQLB SBLEQ
+RQBZV EJCHL HWQKQ VLRHL QYBSR QWWGZ HRHCB JQZNH EYRBW
+BNBVW
+\setromanfont[Mapping=tex-text]{Times}
+
+\item Decifre el siguiente texto, que utiliza el alfabeto estándar. De ser posible, describa la construcción del alfabeto de cifrado:
+
+\setromanfont[Mapping=tex-text]{Courier}
+PADTYR AT PZDGODVDT YEJCMOD OEVGDJ L YMDQGDHDJ VDT BAETRJ
+PRHR ORJ YE TEWVRT IDGD UAMETEJ TR JDBET TDYD DOQATDJ
+IEGJRTDJ JE IGEQATVDT IRG UAE OD PMETPMD TR JE OEKDTVD
+L OR VGMVAGD EJ IRG EJVR UAMETEJ IAEYET ETVETYEG OD
+GECAVDPMRT LD JDBET UAE TR EJ TEPEJDGMD L IAEYET JM
+DJM OR YEJEDT YEVEPVDG DO PZDGODVDT IRG JM HMJHR ORJ
+UAE TR IAEYET TR JDBGMDT OD YMCEGETPMD ETVGE OD KEGYDYEGD
+GEJIAEJVD L ORJ TAEKRJ YMDQGDHDJ L OEVGDJ UAE EO PZDGODVDT
+IGRYAPMGMD YEPODGDTYR UAE ZD YEGGRVDYR D ORJ CMORJRCRJ
+DAQAJVR YE HRGQDT ATD PROEPPMRT YE IDGDYRFDJ
+\setromanfont[Mapping=tex-text]{Times}
+
+
+\item Decifre el siguiente texto, que utiliza el alfabeto estándar. De ser posible, describa la construcción del alfabeto de cifrado: 
+
+\setromanfont[Mapping=tex-text]{Courier}
+BLKLI VOXLM GIZIR LHLBF MKILW FXGLZ XZYZW LZYHL IYLVM
+VITRZ VOVXG IRXZW RIVXG ZNVMG VBOZF GRORA LXLMX ZHRFM
+XRVMG LKLIX RVMGL WVVUR XRVMX RZVHG LBXLN KFVHG LWVUF
+VIGVN VGZOV HGLBX LMHXR VMGVX LMHGZ MGVNV MGVBK FVWLH
+LKLIG ZIUZX RONVM GVOLH NZHVC GIVNZ WLHXZ NYRLH ZNYRV
+MGZOV HVHGL HHLMS VXSLH JFVKZ IGRVM WLWVO ZRIIV UFGZY
+OVKIL KLHRX RLMWV JFVMR MTFMH VIKFV WVXIV ZIFMH VINHK
+VIUVX GLJFV VOIVW FXVEF VHGIZ GLMGZ GVLIZ ZOZMZ WZ
+\setromanfont[Mapping=tex-text]{Times}
+
+\end{enumerate}
 
 \end{document}  
