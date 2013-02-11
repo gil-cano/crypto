@@ -13,7 +13,7 @@
 \usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}
 \usepackage{amssymb}
-\usepackage{hanging}
+\usepackage{scrextend}
 
 % Will Robertson's fontspec.sty can be used to simplify font choices.
 % To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
@@ -25,6 +25,8 @@
 \setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
 \setmonofont[Scale=MatchLowercase]{Andale Mono}
 
+\topmargin=-50pt
+\textheight=630pt
 \title{Criptografia y Seguridad, Tarea 1}
 \author{Fecha de Entrega: Lunes 18 de febrero de 2013}
 \date{}                                           % Activate to display a given date or no date
@@ -52,23 +54,29 @@
 
 \item Utilice la transformación afin $3x + 5\ (mod\ 26)$ para cifrar el siguiente texto. Ignore los acentos y signos de puntuación:
 
+\begin{addmargin}[1em]{2em} % 1em left, 2em right
 Siempre tengo un plan de emergencia cuando  tomo algún riesgo: si todo lo demás falla, voy a morir una muerte horrible
 y dolorosa. En efecto, no es un buen plan de emergencia, pero
 es un plan.
 
 (Walter Slovotsky, en {\it El camino a casa} de Joel Rosenberg)
+\end{addmargin}
 
 \item El siguiente texto fue cifrado con una transformación afín sobre el alfabeto español de 27 letras.
 La primer palabra es "cuando". Diga cuál fue la transformación de cifrado, y decifre el mensaje. (Sugerencia: encuentre la función inversa, que también es una transformación afín.)
 
+\begin{addmargin}[1em]{2em} % 1em left, 2em right
 \setromanfont[Mapping=tex-text]{Courier}
 JEBZN HAQZY BCGKH WIHTB CBJQS AHNHR HLHWG FRQLB SBLEQ
 RQBZV EJCHL HWQKQ VLRHL QYBSR QWWGZ HRHCB JQZNH EYRBW
 BNBVW
+\end{addmargin}
+
 \setromanfont[Mapping=tex-text]{Times}
 
 \item Decifre el siguiente texto, que utiliza el alfabeto estándar. De ser posible, describa la construcción del alfabeto de cifrado:
 
+\begin{addmargin}[1em]{2em} % 1em left, 2em right
 \setromanfont[Mapping=tex-text]{Courier}
 PADTYR AT PZDGODVDT YEJCMOD OEVGDJ L YMDQGDHDJ VDT BAETRJ
 PRHR ORJ YE TEWVRT IDGD UAMETEJ TR JDBET TDYD DOQATDJ
@@ -80,11 +88,13 @@ UAE TR IAEYET TR JDBGMDT OD YMCEGETPMD ETVGE OD KEGYDYEGD
 GEJIAEJVD L ORJ TAEKRJ YMDQGDHDJ L OEVGDJ UAE EO PZDGODVDT
 IGRYAPMGMD YEPODGDTYR UAE ZD YEGGRVDYR D ORJ CMORJRCRJ
 DAQAJVR YE HRGQDT ATD PROEPPMRT YE IDGDYRFDJ
-\setromanfont[Mapping=tex-text]{Times}
+\end{addmargin}
 
+\setromanfont[Mapping=tex-text]{Times}
 
 \item Decifre el siguiente texto, que utiliza el alfabeto estándar. De ser posible, describa la construcción del alfabeto de cifrado: 
 
+\begin{addmargin}[1em]{2em} % 1em left, 2em right
 \setromanfont[Mapping=tex-text]{Courier}
 BLKLI VOXLM GIZIR LHLBF MKILW FXGLZ XZYZW LZYHL IYLVM
 VITRZ VOVXG IRXZW RIVXG ZNVMG VBOZF GRORA LXLMX ZHRFM
@@ -93,7 +103,9 @@ VIGVN VGZOV HGLBX LMHXR VMGVX LMHGZ MGVNV MGVBK FVWLH
 LKLIG ZIUZX RONVM GVOLH NZHVC GIVNZ WLHXZ NYRLH ZNYRV
 MGZOV HVHGL HHLMS VXSLH JFVKZ IGRVM WLWVO ZRIIV UFGZY
 OVKIL KLHRX RLMWV JFVMR MTFMH VIKFV WVXIV ZIFMH VINHK
-VIUVX GLJFV VOIVW FXVEF VHGIZ GLMGZ GVLIZ ZOZMZ WZ
+VIUVX GLJFV VOIVW FXVEF VHGIZ GLMGZ GVLIZ ZOZMZ WZ\hspace*{21pt}
+\end{addmargin}
+
 \setromanfont[Mapping=tex-text]{Times}
 
 \end{enumerate}
