@@ -28,7 +28,7 @@
 \topmargin=-50pt
 \textheight=630pt
 \title{Criptografía y Seguridad, Tarea 2}
-\author{Fecha de Entrega: Lunes 4 de marzo de 2013}
+\author{Fecha de Entrega: Lunes 15 de abril de 2013}
 \date{}                                           % Activate to display a given date or no date
 
 \begin{document}
@@ -47,5 +47,45 @@
 % Here are some multilingual Unicode fonts: this is Arabic text: {\A السلام عليكم}, this is Hebrew: {\H שלום}, 
 % and here's some Japanese: {\J 今日は}.
 
+\begin{enumerate}
 
+\item Una propiedad importante en la seguridad de DES es que las cajas-S no son lineales.
+Muestra que $S_1(x_1) \oplus S_1(x_2)  \ne S_1(x_1 \oplus x_2) $, para:
+\begin{enumerate}
+\item $x_1 = 000000, x_2 = 000001$
+\item $x_1 = 111111, x_2 = 100000$
+\item $x_1 = 101010, x_2 = 010101$
+\end{enumerate}
+
+\item ¿Cuál es la salida en la primera ronda del algoritmo DES cuando el texto claro y la llave son todos 1?
+
+\item Usando en DES una palabra de entrada que tiene un 1 en el bit 57 y en todos los demás 0, y una llave de puros ceros:
+\begin{enumerate}
+\item ¿Cuantas cajas-S tienen una entrada diferente comparado con el caso en que todos los bits de la palabra de entrada   son cero?
+\item ¿Cuál es la salida después de la primera ronda?
+\item ¿Cuantos bits de salida cambiaron después de la primera ronda,  respecto a el caso en que todos los bits de la palabra de entrada son cero?
+\end{enumerate}
+
+\item Sean $p = 41$ y $p = 17$ los dos primos dados como parámetros de RSA.
+\begin{enumerate}
+\item ¿Cuál de los parámetros $e_1 = 32, e_2 = 49$ es un exponente valido para RSA?
+\item Calcula la llave privada correspondiente $k_{pr} = (p, q, d)$
+\end{enumerate}
+
+\item Cifra y descifra usando el algoritmo RSA con los siguientes parámetros:
+\begin{enumerate}
+\item $p = 3$, $q = 11$, $d =  7$, $x = 5$
+\item $p = 5$, $q = 11$, $e =  3$, $x = 9$
+\end{enumerate}
+
+\item Dado un esquema de firma digital con RSA y llave publica ($n = 9797, e = 131$), ¿Cuáles de las siguientes firmas
+es valida?
+\begin{enumerate}
+\item $(x = 123, sig(x) = 6292)$
+\item $(x = 4333, sig(x) = 4768)$
+\item $(x = 4333, sig(x) = 1424)$
+\end{enumerate}
+
+
+\end{enumerate}
 \end{document}  
